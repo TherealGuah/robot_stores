@@ -12,5 +12,10 @@ const getProduct = async (id) => {
     return await dbRequest.find({"id": id}).toArray();
 };
 
+const addProduct = async (newProduct) => {
+    return await dbRequest.insertOne(newProduct);
+};
+
 module.exports.getAllProducts = getAllProducts;
 module.exports.getProduct = getProduct;
+module.exports.addProduct = addProduct;

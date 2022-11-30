@@ -11,5 +11,13 @@ const getProduct = (req, res) => {
         .then( product => res.json(product));
 };
 
+const addProduct = (req, res) => {
+    let newProduct  = req.body;
+    console.log(newProduct);
+    productsService.addProduct(newProduct)
+        .then( newProduct => res.json(newProduct));
+};
+
 module.exports.getAllProducts = getAllProducts;
 module.exports.getProduct = getProduct;
+module.exports.addProduct = addProduct;
