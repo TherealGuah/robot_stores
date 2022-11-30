@@ -8,6 +8,8 @@ const routes = (app) => {
     app.post('/products', productsController.addProduct);
     // delete product
     app.delete('/products/:id', productsController.deleteProduct);
+    // put single product
+    app.put('/products/:id', productsController.editProduct);
 };
 
 module.exports = routes;
