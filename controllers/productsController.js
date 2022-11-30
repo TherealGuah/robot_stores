@@ -5,4 +5,11 @@ const getAllProducts = (req, res) => {
         .then( allProducts => res.json(allProducts));
 };
 
+const getProduct = (req, res) => {
+    let id  = parseInt(req.params.id);
+    productsService.getProduct(id)
+        .then( product => res.json(product));
+};
+
 module.exports.getAllProducts = getAllProducts;
+module.exports.getProduct = getProduct;

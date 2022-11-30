@@ -1,11 +1,16 @@
 const dbService  = require('../services/dbService');
 
-let allProductsCollection = null;
+let dbRequest = null;
 dbService.connectToMongoDB()
-    .then((db) => allProductsCollection = db.collection('products'));
+    .then( (db) => dbRequest = db.collection('products'));
 
 const getAllProducts = async () => {
-    return await allProductsCollection.find({}).toArray();
+    return await dbRequest.find({}).toArray();
+};
+
+const getProduct = async (id) => {
+    return await dbRequest.find({"id": id}).toArray();
 };
 
 module.exports.getAllProducts = getAllProducts;
+module.exports.getProduct = getProduct;
