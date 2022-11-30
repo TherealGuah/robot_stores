@@ -19,7 +19,7 @@ const addProduct = (req, res) => {
 
 const deleteProduct = (req, res) => {
     let id  = parseInt(req.params.id);
-    productsService.getProduct(id)
+    productsService.deleteProduct(id)
         .then( product => res.json(product));
 };
 
