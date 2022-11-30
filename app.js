@@ -1,12 +1,12 @@
 const express = require('express');
-// const routes = require('./config/routes');
+const routes = require('./config/routes');
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 
-// routes(app);
+routes(app);
 
 app.listen(port, () => {
     console.log(`Nodemon listening on port: ${port}`);
