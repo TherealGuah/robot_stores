@@ -6,6 +6,8 @@ const routes = (app) => {
     app.get('/products/:id', productsController.getProduct);
     //post single product
     app.post('/products', productsController.addProduct);
+    // delete product
+    app.delete('/products/:id', productsController.deleteProduct);
 };
 
 module.exports = routes;
